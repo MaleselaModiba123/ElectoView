@@ -13,6 +13,6 @@ Once completed, ElectroSense will:
  
 ## Project Documents
 
-[SPECIFICATION.md](./SPECIFICATION.md) | Full system specification including domain, problem statement, scope, functional and non-functional requirements, and use cases.
-[ARCHITECTURE.md](./ARCHITECTURE.md) | C4 architectural diagrams (Context, Container, Component, Code) with Mermaid source.
+[SPECIFICATION.md](./Specification.md) | Full system specification including domain, problem statement, scope, functional and non-functional requirements, and use cases.
+[ARCHITECTURE.md](./Architecture.md) | C4 architectural diagrams (Context, Container, Component, Code) with Mermaid source.
 
