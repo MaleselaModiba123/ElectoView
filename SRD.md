@@ -262,5 +262,3 @@
  
 **NFR-P03:** The anomaly detection check (FR-05) shall complete and persist the anomaly record within 10 seconds of the triggering meter reading being ingested, under a sustained load of 100 readings per second.  
 *Stakeholder:* Electrcity Distribution Manager, Technician
- 
----
