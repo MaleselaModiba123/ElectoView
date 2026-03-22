@@ -13,11 +13,15 @@ Once completed, ElectroView will:
  
 ## Project Documents
 
-[SPECIFICATION.md](./Specification.md) | Full system specification including domain, problem statement, scope, functional and non-functional requirements, and use cases.
-[ARCHITECTURE.md](./Architecture.md) | C4 architectural diagrams (Context, Container, Component, Code) with Mermaid source.
-[STAKEHOLDERS.md](./Stakeholders.md) | Stakeholder analysis: 7 stakeholders with roles, key concerns, pain points, success metrics, and conflict mapping
-[SRD.md](./SRD.md) | System Requirements Document: 12 functional requirements with acceptance criteria + 14 non-functional requirements across 6 quality categories.
-[REFLECTION.md](./Reflection.md) | Reflection on challenges in balancing competing stakeholder needs during requirements engineering.
+[SPECIFICATION.md](./Specification.md) Full system specification including domain, problem statement, scope, functional and non-functional requirements, and use cases.
+
+[ARCHITECTURE.md](./Architecture.md) C4 architectural diagrams (Context, Container, Component, Code) with Mermaid source.
+
+[STAKEHOLDERS.md](./Stakeholders.md) Stakeholder analysis: 7 stakeholders with roles, key concerns, pain points, success metrics, and conflict mapping.
+
+[SRD.md](./SRD.md) System Requirements Document: 12 functional requirements with acceptance criteria + 14 non-functional requirements across 6 quality categories.
+
+[REFLECTION.md](./Reflection.md) Reflection on challenges in balancing competing stakeholder needs during requirements engineering.
 
 ---
  
