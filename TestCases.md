@@ -27,6 +27,8 @@
 |---|---|---|---|---|---|---|---|---|
 | TC-NFR-P01 | NFR-P01 | Zone dashboard load time under concurrent user load | Load Test | Apache JMeter / k6 | 1. Configure 200 simultaneous virtual users. 2. Each user authenticates and navigates to the Zone Dashboard. 3. Measure time from HTTP request to full page render (Time to Interactive). 4. Run for 5 minutes sustained. | 95th percentile response time is ≤ 2 seconds. No HTTP 5xx errors occur. Server CPU usage remains below 80%. | — | — |
 | TC-NFR-P02 | NFR-S02 | Meter reading ingestion throughput at 500 readings/second | Stress Test | k6 / Locust | 1. Configure a load generator to submit POST requests to `/api/meters/readings` at a rate of 500 requests per second. 2. Run for 60 seconds. 3. Monitor API response codes, database write success rate, and queue depth. | All readings are persisted without data loss. No HTTP 5xx errors. Average response time for ingestion endpoint remains ≤ 500ms. Database write success rate is 100%. | — | — |
+
+---
  
 ### 2.2 Security Test Cases
  
