@@ -23,6 +23,10 @@ Once completed, ElectroView will:
 
 [REFLECTION.md](./Reflection.md) Reflection on challenges in balancing competing stakeholder needs during requirements engineering.
 
+[Use Cases](./UseCases.md) UML use case diagram (Mermaid), actor descriptions, 8 detailed use case specifications with flows and alternative flow.
+
+[Test Cases](./TestCases.md) Functional test cases + non-functional test cases 
+
 ---
  
 ## Tech Stack (Planned)
