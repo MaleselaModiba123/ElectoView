@@ -39,5 +39,49 @@
 | US-011 | Executive KPI summary dashboard | Could-have | 3 | US-001, US-003 | Valuable for stakeholder buy-in and strategic reporting, but executives can be served by analyst-generated reports in the short term. |
 
 ---
+## Sprint Plan
 
+### 3.1 Sprint Goal
+**"Deliver a working, secure, role-authenticated foundation with live zone monitoring, automated anomaly detection, and a consumer usage view, forming the minimum viable product of ElectroSense."**
+ 
+This sprint establishes the core value of the system: electricity consumption is ingested, visualised in real time for utility managers, flagged automatically when anomalous, and made accessible to residential consumers. By the end of Sprint 1, a demonstrable, end-to-end working system exists that satisfies the most critical stakeholder needs identified in Assignment 4.
 
+### 3.2 Selected Stories for Sprint 1
+ 
+| Story ID | Summary |
+|---|---|
+| US-012 | Secure auth, password hashing, TLS |
+| US-008 | Admin manages user accounts and roles |
+| US-001 | View live zone dashboard |
+| US-002 | Automatic anomaly detection and alerting |
+| US-005 | Consumer views personal usage dashboard |
+| **Total** | |
+
+## 3.2 Sprint Backlog
+
+| Task ID | Story ID | Task Description | Estimated Hours | Status |
+|---|---|---|---|---|
+| T-001 | US-012 | Configure TLS certificate and enforce HTTPS redirect in Nginx | 2 | To Do |
+| T-002 | US-012 | Implement bcrypt password hashing in the auth service (cost factor 12) | 3 | To Do |
+| T-003 | US-012 | Implement JWT issuance and validation middleware with role claims | 4 | To Do |
+| T-004 | US-012 | Implement login rate limiting (10 attempts/min/IP) and account lockout after 5 failures | 3 | To Do |
+| T-005 | US-008 | Build POST `/api/admin/users` endpoint — create user with role assignment | 4 | To Do |
+| T-006 | US-008 | Build PATCH `/api/admin/users/:id` endpoint — update role and deactivate | 3 | To Do |
+| T-007 | US-008 | Build audit log table and middleware to record all user/meter changes | 4 | To Do |
+| T-008 | US-008 | Build User Management UI page (list, create, deactivate) | 5 | To Do |
+| T-009 | US-001 | Build GET `/api/dashboard/zones` endpoint returning aggregated zone summaries | 5 | To Do |
+| T-010 | US-001 | Implement Redis caching layer for zone summary queries (5-minute TTL) | 3 | To Do |
+| T-011 | US-001 | Build Zone Dashboard UI — zone cards with kWh, load bar, status indicator | 6 | To Do |
+| T-012 | US-001 | Implement 5-minute auto-refresh on Zone Dashboard (polling) | 2 | To Do |
+| T-013 | US-002 | Build anomaly detection service — compare reading to zone threshold | 4 | To Do |
+| T-014 | US-002 | Build POST `/api/meters/readings` ingestion endpoint with validation | 4 | To Do |
+| T-015 | US-002 | Implement anomaly record creation and in-app notification push | 4 | To Do |
+| T-016 | US-002 | Integrate email alert dispatch (SendGrid) on anomaly creation | 3 | To Do |
+| T-017 | US-005 | Build GET `/api/consumers/me/readings` endpoint scoped to authenticated consumer's meter | 4 | To Do |
+| T-018 | US-005 | Build Consumer Dashboard UI — daily bar chart, period comparison, % change indicator | 6 | To Do |
+| T-019 | US-005 | Enforce consumer data isolation — reject requests to other meters with HTTP 403 | 2 | To Do |
+| T-020 | All | Write integration tests for all Sprint 1 API endpoints (target: 70% coverage) | 6 | To Do |
+| T-021 | All | Set up Docker Compose file with all services (API, frontend, PostgreSQL, Redis) | 4 | To Do |
+| T-022 | All | Seed database with simulated meter data for Zone A–E (Cape Town zones) | 2 | To Do |
+
+---
