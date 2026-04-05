@@ -25,14 +25,14 @@
 
 | Story ID | User Story (Summary) | MoSCoW | Story Points | Dependencies | Justification |
 |---|---|---|---|---|---|
-| US-001 | View live zone dashboard | Must-have | 5 | US-012 | Core operational capability for the Utility Manager — the primary daily user of the system. Without this, the system delivers no monitoring value. |
+| US-001 | View live zone dashboard | Must-have | 5 | US-012 | Core operational capability for the Electrcity distribution Manager the primary daily user of the system. Without this, the system delivers no monitoring value. |
 | US-002 | Automatic anomaly detection and alerting | Must-have | 5 | US-001, US-009 (threshold config) | Addresses the most critical pain point: reactive fault management. A key differentiator of the system over manual monitoring. |
-| US-003 | View historical consumption trend charts | Must-have | 3 | US-001 | Required for Grid Analyst's core workflow. Trend data is the foundation of all planning and reporting activities. |
+| US-003 | View historical consumption trend charts | Must-have | 3 | US-001 | Required for Electrcity Network Analyst's core workflow. Trend data is the foundation of all planning and reporting activities. |
 | US-004 | Generate and export consumption report | Must-have | 5 | US-003 | Finance reconciliation depends on this. Directly satisfies the Finance Staff success metric of reducing dispute resolution from 5 days to 1. |
 | US-005 | Consumer views personal usage dashboard | Must-have | 3 | US-012 | Consumer-facing transparency is a primary system goal. Provides value independent of backend analytics features. |
 | US-012 | Secure auth, password hashing, TLS enforcement | Must-have | 3 | None | Security is a prerequisite for all other stories. No story involving user data can be accepted without this foundation in place. |
 | US-008 | Admin manages user accounts and roles | Must-have | 3 | US-012 | All role-differentiated features depend on user accounts existing with correct roles. Required before any actor-specific story can be tested end-to-end. |
-| US-007 | Meter technician manages anomaly resolution | Must-have | 3 | US-002 | Anomaly detection (US-002) has no operational value without a resolution workflow. Together they form a complete fault management loop. |
+| US-007 | Technician manages anomaly resolution | Must-have | 3 | US-002 | Anomaly detection (US-002) has no operational value without a resolution workflow. Together they form a complete fault management loop. |
 | US-006 | Consumer sets personal usage budget and alerts | Should-have | 2 | US-005 | Adds meaningful value to the consumer experience but is not essential for the initial release. Depends on the personal dashboard (US-005) being delivered first. |
 | US-010 | Bulk CSV import of historical meter data | Should-have | 3 | US-008 | Important for analysts to perform long-term trend analysis from day one of deployment, but the system delivers value without it initially. |
 | US-009 | Single-command Docker deployment | Should-have | 2 | None | Significant operational value for IT Admin, but the system can be deployed manually in the short term. Prioritised for the second sprint. |
@@ -55,7 +55,6 @@ This sprint establishes the core value of the system: electricity consumption is
 | US-001 | View live zone dashboard |
 | US-002 | Automatic anomaly detection and alerting |
 | US-005 | Consumer views personal usage dashboard |
-| **Total** | |
 
 ## 3.2 Sprint Backlog
 
@@ -65,21 +64,21 @@ This sprint establishes the core value of the system: electricity consumption is
 | T-002 | US-012 | Implement bcrypt password hashing in the auth service (cost factor 12) | 3 | To Do |
 | T-003 | US-012 | Implement JWT issuance and validation middleware with role claims | 4 | To Do |
 | T-004 | US-012 | Implement login rate limiting (10 attempts/min/IP) and account lockout after 5 failures | 3 | To Do |
-| T-005 | US-008 | Build POST `/api/admin/users` endpoint — create user with role assignment | 4 | To Do |
-| T-006 | US-008 | Build PATCH `/api/admin/users/:id` endpoint — update role and deactivate | 3 | To Do |
+| T-005 | US-008 | Build POST `/api/admin/users` endpoint,  create user with role assignment | 4 | To Do |
+| T-006 | US-008 | Build PATCH `/api/admin/users/:id` endpoint, update role and deactivate | 3 | To Do |
 | T-007 | US-008 | Build audit log table and middleware to record all user/meter changes | 4 | To Do |
 | T-008 | US-008 | Build User Management UI page (list, create, deactivate) | 5 | To Do |
 | T-009 | US-001 | Build GET `/api/dashboard/zones` endpoint returning aggregated zone summaries | 5 | To Do |
 | T-010 | US-001 | Implement Redis caching layer for zone summary queries (5-minute TTL) | 3 | To Do |
-| T-011 | US-001 | Build Zone Dashboard UI — zone cards with kWh, load bar, status indicator | 6 | To Do |
+| T-011 | US-001 | Build Zone Dashboard UI, zone cards with kWh, load bar, status indicator | 6 | To Do |
 | T-012 | US-001 | Implement 5-minute auto-refresh on Zone Dashboard (polling) | 2 | To Do |
-| T-013 | US-002 | Build anomaly detection service — compare reading to zone threshold | 4 | To Do |
+| T-013 | US-002 | Build anomaly detection service, compare reading to zone threshold | 4 | To Do |
 | T-014 | US-002 | Build POST `/api/meters/readings` ingestion endpoint with validation | 4 | To Do |
 | T-015 | US-002 | Implement anomaly record creation and in-app notification push | 4 | To Do |
 | T-016 | US-002 | Integrate email alert dispatch (SendGrid) on anomaly creation | 3 | To Do |
 | T-017 | US-005 | Build GET `/api/consumers/me/readings` endpoint scoped to authenticated consumer's meter | 4 | To Do |
-| T-018 | US-005 | Build Consumer Dashboard UI — daily bar chart, period comparison, % change indicator | 6 | To Do |
-| T-019 | US-005 | Enforce consumer data isolation — reject requests to other meters with HTTP 403 | 2 | To Do |
+| T-018 | US-005 | Build Consumer Dashboard UI, daily bar chart, period comparison, % change indicator | 6 | To Do |
+| T-019 | US-005 | Enforce consumer data isolation, reject requests to other meters with HTTP 403 | 2 | To Do |
 | T-020 | All | Write integration tests for all Sprint 1 API endpoints (target: 70% coverage) | 6 | To Do |
 | T-021 | All | Set up Docker Compose file with all services (API, frontend, PostgreSQL, Redis) | 4 | To Do |
 | T-022 | All | Seed database with simulated meter data for Zone A–E (Cape Town zones) | 2 | To Do |
