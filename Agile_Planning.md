@@ -42,7 +42,7 @@
 ## Sprint Plan
 
 ### 3.1 Sprint Goal
-**"Deliver a working, secure, role-authenticated foundation with live zone monitoring, automated anomaly detection, and a consumer usage view, forming the minimum viable product of ElectroSense."**
+**"Deliver a working, secure, role-authenticated foundation with live zone monitoring, automated anomaly detection, and a consumer usage view, forming the minimum viable product of ElectroView."**
  
 This sprint establishes the core value of the system: electricity consumption is ingested, visualised in real time for utility managers, flagged automatically when anomalous, and made accessible to residential consumers. By the end of Sprint 1, a demonstrable, end-to-end working system exists that satisfies the most critical stakeholder needs identified in Assignment 4.
 
