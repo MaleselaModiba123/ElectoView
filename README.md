@@ -46,8 +46,13 @@ Two custom columns were added beyond the default template:
 - **Blocked** — surfaces tasks that cannot proceed due to dependencies or unresolved
   decisions, separating them from active work to keep WIP counts accurate.
  
-WIP limits: In Progress (max 4), Testing (max 3), In Review (max 3).
+WIP limits: In Progress (max 4), Testing (max 3).
 All Sprint 1 issues are linked to the milestone: Sprint 1 — MVP Foundation.
+
+![alt text](<Screenshot (83).png>)
+
+![alt text](<Screenshot (84).png>)
+
 ---
  
 ## Tech Stack (Planned)
