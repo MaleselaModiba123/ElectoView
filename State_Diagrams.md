@@ -23,7 +23,7 @@ stateDiagram-v2
 ```
 ### Explanation
  
-**Key states:** A User Account begins in `Pending` when first created by an administrator and transitions to `Active` once the admin confirms activation and a welcome email is dispatched. The `Locked` state is entered automatically after 5 consecutive failed login attempts — a security guard condition enforced without human intervention. `Inactive` accounts exist when an admin deactivates a user; the account cannot be logged into but all historical data is retained.
+**Key states:** A User Account begins in `Pending` when first created by an administrator and transitions to `Active` once the admin confirms activation and a welcome email is dispatched. The `Locked` state is entered automatically after 5 consecutive failed login attempts, a security guard condition enforced without human intervention. `Inactive` accounts exist when an admin deactivates a user; the account cannot be logged into but all historical data is retained.
  
 **Key transitions:** The transition from `Active` to `Locked` has an implicit guard: `[failedAttempts >= 5]`. The transition from `Inactive` back to `Active` requires explicit admin action, preventing accidental reactivation.
  
@@ -54,7 +54,7 @@ stateDiagram-v2
  
 **Key states:** Every meter reading submitted to the ingestion API passes through `Validating` before it can be persisted. The guard condition `[payload invalid]` causes immediate rejection with an HTTP 400 response. Once persisted, a second guard `[kWh exceeds zone threshold]` determines whether the reading moves to `FlaggedAnomaly`, triggering the anomaly detection pipeline, or `Normal`, where it is simply stored.
  
-**Key transitions:** The branching at `Persisted` is the system's core anomaly detection decision point. Both terminal paths end the reading's active lifecycle — it becomes a historical record.
+**Key transitions:** The branching at `Persisted` is the system's core anomaly detection decision point. Both terminal paths end the reading's active lifecycle, it becomes a historical record.
  
 **Mapped requirements:** FR-02 (meter reading ingestion), FR-05 (anomaly detection). Maps to US-002, T-013, T-014.
  
@@ -84,7 +84,7 @@ stateDiagram-v2
  
 **Key states:** An anomaly is created in `Open` state the moment a flagged reading is detected. `InProgress` represents active field or remote investigation. `Escalated` is a guard-conditioned transition that fires if no resolution occurs within 48 hours, ensuring anomalies cannot be silently abandoned. `AutoResolved` handles the case where consumption normalises before a technician intervenes.
  
-**Key transitions:** The transition from `InProgress` to `Escalated` has the guard `[resolutionTime > 48h]`. Resolution requires explicit note entry — the system does not permit a status change to `Resolved` without a non-empty resolution note field.
+**Key transitions:** The transition from `InProgress` to `Escalated` has the guard `[resolutionTime > 48h]`. Resolution requires explicit note entry, the system does not permit a status change to `Resolved` without a non-empty resolution note field.
  
 **Mapped requirements:** FR-05 (anomaly detection), FR-06 (anomaly resolution workflow). Maps to US-002, US-007, T-015.
  
