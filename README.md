@@ -27,11 +27,15 @@ Once completed, ElectroView will:
 
 [Agile Panning](./Agile_Planning.md) 12 user stories (INVEST-compliant), MoSCoW-prioritised product backlog, Sprint 1 plan with 22 tasks
 
-[REFLECTION.md](./Reflection.md) Reflection on challenges faced in the documentation of the project.
+[REFLECTION](./Reflection.md) Reflection on challenges faced in the documentation of the project.
 
-[template_analysis.md](./template_analysis.md) | Comparison of 4 GitHub project templates with justification for selecting Team Planning.
+[template_analysis](./template_analysis.md) Comparison of 4 GitHub project templates with justification for selecting Team Planning.
 
-[kanban_explanation.md](./kanban_explanation.md) | Kanban board definition, 7-column design rationale, WIP limits, and README section for the board.
+[kanban_explanation.](./kanban_explanation.md) Kanban board definition, 7-column design rationale, WIP limits, and README section for the board.
+
+[State_Diagrams](./State_Diagrams.md) State transition diagrams for 8 objects: User Account, Meter Reading, Anomaly, Consumption Report, Zone, Smart Meter, Consumer Budget, User Session.
+
+[Activity_Diagrams](./Activity_Diagram.md) Activity diagrams for 8 workflows: Login, Meter Ingestion, Anomaly Resolution, Consumer Dashboard, Report Export, Threshold Config, User Management, Executive KPI
 
 ## Project Board
  
