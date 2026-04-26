@@ -37,9 +37,9 @@ Once completed, ElectroView will:
 
 [Activity Diagrams](./Activity_Diagram.md) Activity diagrams for 8 workflows: Login, Meter Ingestion, Anomaly Resolution, Consumer Dashboard, Report Export, Threshold Config, User Management, Executive KPI
 
- [Domain Diagram](./Domain_Diagram.md) | 7 domain entities with attributes, methods, relationships, and 10 business rules.
+ [Domain Diagram](./Domain_Model.md) | 7 domain entities with attributes, methods, relationships, and 10 business rules.
 
- [Class Diagram](./Class_Model.md) | Full Mermaid.js class diagram with enumerations, 8 domain classes, 3 service boundary classes, multiplicity, composition, and design decision explanations
+ [Class Diagram](Class_Diagram.md) | Full Mermaid.js class diagram with enumerations, 8 domain classes, 3 service boundary classes, multiplicity, composition, and design decision explanations
 
 ## Project Board
  
