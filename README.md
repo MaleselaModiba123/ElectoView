@@ -29,13 +29,17 @@ Once completed, ElectroView will:
 
 [REFLECTION](./Reflection.md) Reflection on challenges faced in the documentation of the project.
 
-[template_analysis](./template_analysis.md) Comparison of 4 GitHub project templates with justification for selecting Team Planning.
+[template analysis](./template_analysis.md) Comparison of 4 GitHub project templates with justification for selecting Team Planning.
 
-[kanban_explanation.](./kanban_explanation.md) Kanban board definition, 7-column design rationale, WIP limits, and README section for the board.
+[kanban explanation](./kanban_explanation.md) Kanban board definition, 7-column design rationale, WIP limits, and README section for the board.
 
-[State_Diagrams](./State_Diagrams.md) State transition diagrams for 8 objects: User Account, Meter Reading, Anomaly, Consumption Report, Zone, Smart Meter, Consumer Budget, User Session.
+[State Diagrams](./State_Diagrams.md) State transition diagrams for 8 objects: User Account, Meter Reading, Anomaly, Consumption Report, Zone, Smart Meter, Consumer Budget, User Session.
 
-[Activity_Diagrams](./Activity_Diagram.md) Activity diagrams for 8 workflows: Login, Meter Ingestion, Anomaly Resolution, Consumer Dashboard, Report Export, Threshold Config, User Management, Executive KPI
+[Activity Diagrams](./Activity_Diagram.md) Activity diagrams for 8 workflows: Login, Meter Ingestion, Anomaly Resolution, Consumer Dashboard, Report Export, Threshold Config, User Management, Executive KPI
+
+ [Domain Diagram](./Domain_Diagram.md) | 7 domain entities with attributes, methods, relationships, and 10 business rules.
+
+ [Class Diagram](./Class_Model.md) | Full Mermaid.js class diagram with enumerations, 8 domain classes, 3 service boundary classes, multiplicity, composition, and design decision explanations
 
 ## Project Board
  
