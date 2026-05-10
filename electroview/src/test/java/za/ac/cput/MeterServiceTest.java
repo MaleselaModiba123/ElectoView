@@ -6,7 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import za.ac.cput.domain.Meter;
+import za.ac.cput.domain.*;
 import za.ac.cput.Enums.*;
 import za.ac.cput.repository.MeterRepository;
 import za.ac.cput.service.MeterService;
