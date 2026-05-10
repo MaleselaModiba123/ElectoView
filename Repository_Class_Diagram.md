@@ -27,7 +27,7 @@ classDiagram
     %% ─────────────────────────────────────────
     %% Entity-Specific Repository Interfaces
     %% ─────────────────────────────────────────
-    class UserRepositoryI {
+    class IUserRepository {
         <<interface>>
         +findByEmail(String email) Optional~User~
         +findByRole(Role role) List~User~
@@ -35,13 +35,13 @@ classDiagram
         +existsByEmail(String email) boolean
     }
 
-    class ZoneRepositoryI {
+    class IZoneRepository {
         <<interface>>
         +findByStatus(ZoneStatus status) List~Zone~
         +existsByName(String name) boolean
     }
 
-    class MeterRepositoryI {
+    class IMeterRepository {
         <<interface>>
         +findByZoneId(String zoneId) List~Meter~
         +findByStatus(MeterStatus status) List~Meter~
@@ -50,14 +50,14 @@ classDiagram
         +existsBySerialNumber(String serial) boolean
     }
 
-    class ReadingRepositoryI {
+    class IReadingRepository {
         <<interface>>
         +findByMeterId(String meterId) List~Reading~
         +findByMeterIdAndRecordedAtBetween(...) List~Reading~
         +findAnomalous() List~Reading~
     }
 
-    class AnomalyRepositoryI {
+    class IAnomalyRepository {
         <<interface>>
         +findByMeterId(String meterId) List~Anomaly~
         +findByStatus(AnomalyStatus status) List~Anomaly~
@@ -65,14 +65,14 @@ classDiagram
         +countByStatus(AnomalyStatus status) long
     }
 
-    class ReportRepositoryI {
+    class IReportRepository {
         <<interface>>
         +findByRequestedBy(String userId) List~Report~
         +findByStatus(ReportStatus status) List~Report~
         +findByZoneId(String zoneId) List~Report~
     }
 
-    class DailySummaryRepositoryI {
+    class IDailySummaryRepository {
         <<interface>>
         +findByZoneId(String zoneId) List~DailySummary~
         +findByZoneIdAndSummaryDate(...) Optional~DailySummary~
@@ -195,15 +195,15 @@ eliminating seven duplicate copies of `save`, `findById`, `findAll`,
 
 ### 2. Entity-Specific Interfaces Add Domain Queries
 
-Generic CRUD is not enough for real applications. `UserRepositoryI` adds
-`findByEmail` because the User domain requires it. `MeterRepositoryI` adds
+Generic CRUD is not enough for real applications. `IUserRepository` adds
+`findByEmail` because the User domain requires it. `IMeterRepository` adds
 `findByZoneId` because zone-scoped queries are central to the dashboard.
-These methods stay on the interface — not the implementation — so any
+These methods stay on the interface, not the implementation, so any
 backend can satisfy the contract.
 
 ### 3. Multiple Implementations per Interface
 
-`UserRepositoryI` has two implementations shown:
+`IUserRepository` has two implementations shown:
 - `InMemoryUserRepository` — production-ready, used in tests
 - `FileSystemUserRepository` — stub demonstrating future-proofing
 
@@ -215,7 +215,7 @@ without modifying any consumer code.
 
 `RepositoryFactory` is the only class that knows about concrete
 implementations. Service classes never import `InMemoryUserRepository`
-directly — they receive a `UserRepositoryI` reference and call its
+directly, they receive a `IUserRepository` reference and call its
 methods. To swap backends, only the factory call changes.
 
 ### 5. StorageType Enum Bounds the Choices
@@ -223,5 +223,5 @@ methods. To swap backends, only the factory call changes.
 Using an enum for storage type means:
 - The compiler enforces only valid types are passed
 - Adding a new backend requires adding both a new enum value and a new
-  case in the factory — neither change can be forgotten
+  case in the factory, neither change can be forgotten
 - Documentation (the enum values themselves) tells you what backends exist
