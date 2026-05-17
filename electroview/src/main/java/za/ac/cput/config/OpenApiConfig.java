@@ -21,7 +21,7 @@ public class OpenApiConfig {
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("Malesela Modiba")
-                                .email("malesela@cput.ac.za"))
+                                .email("222140275@mycput.ac.za"))
                         .license(new License()
                                 .name("CPUT — SEG 580S")
                                 .url("https://www.cput.ac.za")));
