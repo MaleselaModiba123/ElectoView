@@ -44,23 +44,30 @@ public class User {
     private int failedLoginAttempts = 0;
 
     @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
 
     private LocalDateTime lastLoginAt;
 
     private static final int MAX_FAILED_ATTEMPTS = 5;
 
     @Builder
-    public User(String name, String email, String passwordHash, Role role, AccountStatus status, int failedLoginAttempts, LocalDateTime createdAt, LocalDateTime lastLoginAt, String id, String password) {
+    public User(String id, String name, String email, String passwordHash, Role role) {
         this.id = id != null ? id : java.util.UUID.randomUUID().toString();
         this.name = name;
         this.email = email;
         this.passwordHash = passwordHash;
         this.role = role;
-        this.status = status;
-        this.failedLoginAttempts = failedLoginAttempts;
-        this.createdAt = createdAt;
-        this.lastLoginAt = lastLoginAt;
+        this.status = AccountStatus.PENDING;
+        this.failedLoginAttempts = 0;
+    }
+    @PrePersist
+    protected void onCreate() {
+        if (this.createdAt == null) {
+            this.createdAt = LocalDateTime.now();
+        }
+        if (this.status == null) {
+            this.status = AccountStatus.PENDING;
+        }
     }
 
      public boolean isActive() {

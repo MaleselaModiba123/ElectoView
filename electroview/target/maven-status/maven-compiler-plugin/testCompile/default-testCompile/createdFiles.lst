@@ -1,12 +1,17 @@
 za\ac\cput\factories\RepositoryFactoryTest.class
+za\ac\cput\repositories\inmemory\InMemoryUserRepositoryTest.class
 za\ac\cput\AnomalyServiceTest.class
+za\ac\cput\exception\GlobalExceptionHandler.class
 za\ac\cput\DashboardComponentFactoryTest.class
 za\ac\cput\ZoneServiceTest.class
+za\ac\cput\integration\MeterControllerIntegrationTest.class
 za\ac\cput\ZonePrototypeTest.class
 za\ac\cput\MeterServiceTest.class
 za\ac\cput\NotificationFactoryTest.class
 za\ac\cput\ReportServiceTest.class
 za\ac\cput\ReportExporterTest.class
+za\ac\cput\integration\UserControllerIntegrationTest.class
+za\ac\cput\integration\ZoneControllerIntegrationTest.class
 za\ac\cput\UserServiceTest.class
 za\ac\cput\repositories\inmemory\InMemoryZoneRepositoryTest.class
 za\ac\cput\DatabaseConnectionManagerTest.class

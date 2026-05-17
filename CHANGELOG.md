@@ -101,3 +101,45 @@
   automatically during development
 - Spring Security disabled in `application.properties` during development
   to allow unrestricted API access while building the core features
+
+## [1.2.0] — 17 May 2026 — Service Layer and REST API
+
+### Added
+
+#### Service Layer
+- Business logic encapsulated in `UserService`, `ZoneService`, `MeterService`
+  (plus 4 more), each using the repository layer for persistence
+- Input validation and business rule enforcement (duplicate email check,
+  duplicate serial number check, threshold positivity check)
+
+#### REST API
+- Full CRUD REST endpoints for Users, Zones, and Meters (plus 4 more entities)
+- Consistent HTTP status codes: 201 Created, 200 OK, 400 Bad Request, 404 Not Found
+- `GlobalExceptionHandler` converts `IllegalArgumentException` into clean
+  400 Bad Request responses across the entire API
+
+#### API Documentation
+- Integrated SpringDoc OpenAPI 2.3.0 / Swagger UI
+- `OpenApiConfig` defines API metadata (title, description, version, contact)
+- All three core controllers annotated with `@Tag`, `@Operation`, and
+  `@ApiResponses` documenting every endpoint and its possible error responses
+- Swagger UI available at `/swagger-ui.html`
+
+#### Integration Tests
+- `UserControllerIntegrationTest` — 5 tests (full HTTP stack, real H2 DB)
+- `ZoneControllerIntegrationTest` — 5 tests
+- `MeterControllerIntegrationTest` — 6 tests
+- Tests run against an in-memory H2 database, isolated from production MySQL
+- Apache HttpClient 5 wired in for PATCH method support in TestRestTemplate
+
+### Fixed
+- `createdAt` / timestamp fields no longer null on insert — set explicitly
+  in entity constructors so `nullable = false` constraints are satisfied
+- 500 Internal Server Error on duplicate-email creation now correctly
+  returns 400 Bad Request via the global exception handler
+
+### Technical Decisions
+- Used `@SpringBootTest(webEnvironment = RANDOM_PORT)` with `@LocalServerPort`
+  so integration tests hit the real running server on a random free port
+- Separate `src/test/resources/application.properties` points tests at H2
+  so the production MySQL database is never touched during testing

@@ -76,6 +76,7 @@ za\ac\cput\repositories\inmemory\InMemoryZoneRepository.class
 za\ac\cput\patterns\factorymethod\PdfReportExporter.class
 za\ac\cput\domain\Zone$ZoneBuilder.class
 za\ac\cput\patterns\factorymethod\CsvReportExporter.class
+za\ac\cput\config\OpenApiConfig.class
 za\ac\cput\repository\DailySummaryRepository.class
 za\ac\cput\Enums\ThresholdType.class
 za\ac\cput\factories\RepositoryFactory.class

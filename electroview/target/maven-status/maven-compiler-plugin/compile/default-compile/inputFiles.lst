@@ -32,6 +32,7 @@ C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\Enums\Anoma
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\repository\ReportRepository.java
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\repository\ZoneRepository.java
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\repositories\IMeterRepository.java
+C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\config\OpenApiConfig.java
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\patterns\simplefactory\NotificationFactory.java
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\service\ReadingService.java
 C:\Users\welco\Users\ElectoView\electroview\src\main\java\za\ac\cput\controller\ReadingController.java

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: za.ac.cput.ReportServiceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s -- in za.ac.cput.ReportServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s -- in za.ac.cput.ReportServiceTest

@@ -5,11 +5,15 @@ C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\DatabaseCon
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\ReportServiceTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\ReportRequestBuilderTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\AppTest.java
+C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\exception\GlobalExceptionHandler.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\UserServiceTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\ZoneServiceTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\ReportExporterTest.java
+C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\integration\ZoneControllerInegrationTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\repositories\inmemory\RepositoryFactoryTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\MeterServiceTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\NotificationFactoryTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\DashboardComponentFactoryTest.java
+C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\integration\UserControllerIntegrationTest.java
+C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\integration\MeterControllerIntegrationTest.java
 C:\Users\welco\Users\ElectoView\electroview\src\test\java\za\ac\cput\repositories\inmemory\InMemoryUserRepositoryTest.java
