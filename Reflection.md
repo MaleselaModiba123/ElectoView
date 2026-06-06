@@ -100,3 +100,60 @@ The composition relationship between `Zone` and `Meter` was another deliberate d
 The composition relationship between `Zone` and `Meter` was another deliberate decision that required reasoning from the domain model rather than defaulting to a simple association. Composition in UML means the child cannot exist independently of the parent, if the zone is deleted, the meters are deleted. This is a strong claim. In practice, there may be valid reasons to temporarily detach a meter from a zone during zone restructuring without deleting the meter's historical data. However, the business rules established in the domain model and the database schema designed in Assignment 3 treat zone membership as mandatory for a meter. A meter with no zone has no context for threshold evaluation, no aggregation target for summaries, and no display location on the dashboard. Composition was therefore the correct choice, even if it constrains future flexibility.
 
 The trade-off between inheritance and composition was clearest in the decision not to model `Administrator`, `Analyst`, `Consumer`, `Technician`, and `Executive` as subclasses of `User`. An inheritance-based approach would have allowed role-specific methods to be encapsulated in their respective subclasses — `Consumer` would have `viewPersonalUsage()`, `Analyst` would have `generateReport()`. This is clean from a type-system perspective. However, it creates a rigid class hierarchy where changing a user's role requires creating a new object rather than updating a field, and where the database schema would require either a complex joined-table inheritance strategy or a single-table approach with many nullable columns. The enum-based role attribute combined with runtime permission checks in the service layer is more flexible for a system where role changes are a routine administrative operation.
+
+# 9. Peer Review, Onboarding, and Open-Source Collaboration
+
+## How I Improved My Repository Based on Peer Feedback
+
+Receiving 23 forks and 19 stars from classmates was strong validation that
+the onboarding preparation paid off, but the process of getting there
+revealed several weaknesses I had not anticipated. The single most valuable
+piece of feedback was that my setup instructions assumed knowledge I had
+taken for granted as the sole author. Classmates who first tried to clone
+the project did not realise the Maven project lived inside an `electroview`
+subfolder rather than the repository root, so their initial `mvn` commands
+failed. I updated CONTRIBUTING.md to make the `cd electroview` step explicit
+and added the exact MySQL command needed to create the database. After this
+change, the rate of successful local builds among peers visibly improved,
+which I believe directly contributed to the high number of forks. A second
+improvement came from feedback that the Swagger UI link — arguably the
+fastest way to see the project working — was buried deep in the README. I
+moved it into the Getting Started section so a new contributor sees a working
+result within minutes of cloning.
+
+## Challenges in Onboarding Contributors
+
+The hardest part of preparing for contributors was confronting how much
+implicit knowledge I held. I knew that Spring Security had to be disabled in
+development, that integration tests ran against H2 rather than MySQL, and
+that timestamps were set in entity constructors to satisfy database
+constraints — but none of this was discoverable by someone new. Writing the
+documentation forced me to surface every one of these assumptions. A second
+challenge was scoping the good-first-issues so they were genuinely small yet
+genuinely useful. It was tempting to label complex tasks as beginner-friendly
+simply because I understood them well, but that would have frustrated
+newcomers. I deliberately chose issues like adding integration tests by
+copying an existing template, or adding a single Spring Data query method,
+because they offered a real contribution with a clear reference example and
+no risk of breaking the wider system.
+
+## Lessons Learned About Open-Source Collaboration
+
+The clearest lesson was that documentation is not secondary to the code — it
+is part of the product. A technically sound project that a peer cannot set up
+is, for collaboration purposes, indistinguishable from a broken one. The
+repositories my classmates engaged with most were not necessarily the most
+sophisticated; they were the ones where the path from clone to running was
+shortest and clearest. The second lesson was the importance of lowering the
+barrier to a first contribution. Labelled issues and a clear PR process
+removed the uncertainty that otherwise stops people from starting. Finally, I
+came to appreciate how the branch protection and CI pipeline from Assignment
+13 are what make open collaboration safe at all. Because every pull request
+runs the full test suite automatically and `main` cannot be pushed to
+directly, I could in principle accept changes from strangers without fearing
+they would break the build. The automation is the foundation that makes
+trusting external contributors possible — without it, every contribution
+would require manual verification and collaboration simply would not scale.
+The experience reshaped how I think about my own projects: code is written
+once but read, run, and extended many times, and investing in that
+experience is what turns a personal project into a collaborative one.

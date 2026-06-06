@@ -61,11 +61,38 @@ Once completed, ElectroView will provide:
 | Testing | JUnit 5, Mockito |
 | Build tool | Maven |
 
-**Why Java and Spring Boot?**
-Java's strong type system maps directly onto the UML class diagram from Assignment 9. Spring Boot eliminates boilerplate configuration, and Spring Data JPA generates repository implementations automatically from interface method names — meaning the seven repository interfaces require zero SQL to implement all basic CRUD operations.
+## Getting Started
 
-**Why Lombok?**
-Lombok removes repetitive getters, setters, constructors, and toString methods via annotations. `@Getter`, `@Setter`, `@NoArgsConstructor`, and `@Builder` are used instead of `@Data` to avoid constructor conflicts between Lombok and JPA.
+New here? See [Contributing.md](./Contributing.md) for full setup instructions.
+Quick version:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/ElectoView.git
+cd ElectoView/electroview
+mvn clean install
+mvn spring-boot:run
+```
+
+Then open http://localhost:8080/swagger-ui.html
+
+## Features for Contribution
+
+We welcome contributors! Here are areas where help is wanted:
+
+| Feature | Difficulty | Label |
+|---|---|---|
+| Complete FileSystem repository (JSON storage) | Medium | `good-first-issue` |
+| Add validation messages to API error responses | Easy | `good-first-issue` |
+| Implement PDF report rendering | Medium | `feature-request` |
+| Add Redis caching for zone summaries | Hard | `feature-request` |
+| Wire up real email alerts (SendGrid) | Medium | `feature-request` |
+| Add more integration tests for Anomaly endpoints | Easy | `good-first-issue` |
+
+See the full [Road_Map.md](./Road_Map.md) for the bigger picture.
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](./LICENSE).
 
 ---
 
@@ -255,10 +282,18 @@ All Sprint 1 issues are linked to the milestone: Sprint 1 — MVP Foundation.
 
 ## Tech Stack (Planned — Frontend)
 
-- **Frontend:** React + TypeScript, Chart.js / Recharts
-- **Backend:** Node.js / Express REST API
-- **Database:** PostgreSQL (time-series meter data) + Redis (caching)
-- **Auth:** JWT-based role authentication
-- **Deployment:** Docker + GitHub Actions CI/CD
+| Layer | Technology |
+|---|---|
+| Language | Java 17 |
+| Framework | Spring Boot 3.2.3 |
+| Web | Spring MVC (REST controllers) |
+| Persistence | Spring Data JPA / Hibernate |
+| Database | MySQL 8.0 (production), H2 (integration tests) |
+| Boilerplate reduction | Lombok |
+| API documentation | SpringDoc OpenAPI / Swagger UI |
+| Testing | JUnit 5, Mockito, Spring Boot Test |
+| Build | Maven |
+| CI/CD | GitHub Actions |
+| Version control | Git / GitHub |
 
 ---
