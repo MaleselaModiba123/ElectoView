@@ -62,7 +62,7 @@ and persists everything to a MySQL database.
  
 > Breaks down ElectroView into its deployable containers and their interactions.
  
-``mermaid
+```mermaid
 graph TB
     subgraph client["Client Layer"]
         swagger["Swagger UI<br/>(API documentation & testing)"]
