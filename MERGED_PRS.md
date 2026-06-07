@@ -36,7 +36,7 @@ Feat: Add service layer (Book/Member/Loan) backed by RepositoryFactory
 ```
 
 **CI evidence**
-![CI passing for PR #1](<!Screenshot 2026-06-07 at 21.23.15.png -->)
+![CI passing for PR #1](<!Screenshot 2026-06-07 at 21.23.15.png>)
 
 ---
 
@@ -59,7 +59,7 @@ Feat: Add GET /api/students/active endpoint for active-enrolled students
 ```
 
 **CI evidence**
-![CI passing for PR #2](<!-- -->)
+![CI passing for PR #2](<!Screenshot 2026-06-07 at 23.22.27>)
 
 ---
 
