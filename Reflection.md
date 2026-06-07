@@ -157,3 +157,13 @@ would require manual verification and collaboration simply would not scale.
 The experience reshaped how I think about my own projects: code is written
 once but read, run, and extended many times, and investing in that
 experience is what turns a personal project into a collaborative one.
+
+## Contributions
+
+The first real challenge was simply orienting myself. On ElectoView I know where everything is — I wrote the domain model, the requirements, and the architecture docs. In a peer's repository I had none of that internal map. Before I could implement the service layer for SmartLibraryManagementSystem (issue #20), I had to reconstruct enough of the author's design to make a change that fit their existing structure rather than fighting it.
+
+What made this manageable was treating each project's own documentation as my entry point: the `README.md` to understand the purpose, the `CONTRIBUTING.md` to learn the workflow, and the existing tests to see how the author expected the code to behave. This taught me, from the receiving end, exactly *why* the documentation work in Assignments 13–14 matters. A repository with clear setup instructions and labelled `good-first-issue` tickets was contributable within an hour; without them I would have spent far longer just getting a build running.
+
+The SmartLibraryManagementSystem task (#20) was the most architecturally interesting. The naive solution was to wire `BookService`, `MemberService`, and `LoanService` directly to a concrete repository. Instead I introduced a `RepositoryFactory` that returns the correct repository implementation based on a storage-type string. This decoupled the services from knowing which backend they used, so the project can move from in-memory to a database later without touching the service layer.
+
+Making that decision *in someone else's codebase* was harder than making it in my own, because I had to be confident the abstraction matched the maintainer's intent rather than imposing my preferred design. I justified it in the PR description against the issue's stated goal, which is the collaborative version of defending an architectural choice — you cannot just do it, you have to make the reviewer agree it was the right call.
