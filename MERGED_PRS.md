@@ -23,7 +23,7 @@
 - **Issue addressed:** [#20 — Implement BookService, MemberService and LoanService with business logic](https://github.com/ThatoMabilo/SmartLibraryManagementSystem/issues/20)
 - **PR link:** https://github.com/ThatoMabilo/SmartLibraryManagementSystem/pull/37
 - **Type:** good-first-issue
-- **Status:**  Mergred 
+- **Status:**  Merged 
 
 **Summary of changes**
 - Implemented `BookService`, `MemberService`, and `LoanService` with their business logic.
@@ -36,7 +36,7 @@ Feat: Add service layer (Book/Member/Loan) backed by RepositoryFactory
 ```
 
 **CI evidence**
-![CI passing for PR #1](<!Screenshot 2026-06-07 at 21.23.15.png>)
+![CI passing for PR #1](</PR1.png>)
 
 ---
 
@@ -46,7 +46,7 @@ Feat: Add service layer (Book/Member/Loan) backed by RepositoryFactory
 - **Issue addressed:** [#107 — Add `GET /api/students/active` endpoint](https://github.com/MaleselaModiba123/bello-beauty-academy/issues/107)
 - **PR link:** https://github.com/Aaniquah222641495/bello-beauty-academy/pull/114
 - **Type:** good-first-issue
-- **Status:** 🟡 Sent
+- **Status:** Merged
 
 **Summary of changes**
 - Added a new endpoint `GET /api/students/active` that returns only students with at least one active enrollment.
@@ -59,7 +59,7 @@ Feat: Add GET /api/students/active endpoint for active-enrolled students
 ```
 
 **CI evidence**
-![CI passing for PR #2](<!Screenshot 2026-06-07 at 23.22.27>)
+![CI passing for PR #2](</PR2.png>)
 
 ---
 
