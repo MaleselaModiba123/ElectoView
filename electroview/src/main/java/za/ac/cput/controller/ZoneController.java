@@ -113,4 +113,9 @@ public class ZoneController {
     public ResponseEntity<Zone> refreshStatus(@PathVariable String id) {
         return ResponseEntity.ok(zoneService.updateStatus(id));
     }
+    
+    @GetMapping("/api/zones/location/{location}")
+    public ResponseEntity<List<Zone>> findZoneByLocation (@PathVariable String location){
+    	return ResponseEntity.ok(zoneService.findZoneByLocation(location));
+    }
 }

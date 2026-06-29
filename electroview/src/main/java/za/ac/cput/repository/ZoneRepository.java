@@ -13,4 +13,6 @@ public interface ZoneRepository extends JpaRepository<Zone, String> {
     List<Zone> findByStatus(ZoneStatus status);
 
     boolean existsByName(String name);
+    
+    List<Zone> findByLocation(String location);
 }

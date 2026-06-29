@@ -29,6 +29,8 @@ class ZoneControllerIntegrationTest {
     private int port;
 
     private static String createdZoneId;
+    
+    private static String location= "Western Cape";
 
     private String url(String path) {
         return "http://localhost:" + port + path;
@@ -106,5 +108,16 @@ class ZoneControllerIntegrationTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
         assertEquals(4500.0, response.getBody().getThresholdValue());
+    }
+    
+    @Test
+    @Order(6)
+    void getZonesByLocation_ReturnsListofZonesbyLocation() {
+        ResponseEntity<Zone[]> response = restTemplate.getForEntity(
+                url("/api/zones/location/"+ location), Zone[].class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertTrue(response.getBody().length >= 1);
     }
 }

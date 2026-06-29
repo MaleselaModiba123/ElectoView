@@ -66,4 +66,8 @@ public class ZoneService {
         zone.setStatus(zone.computeStatus());
         return zoneRepository.save(zone);
     }
+    
+    public List<Zone> findZoneByLocation(String location){
+    	return zoneRepository.findByLocation(location);
+    }
 }
